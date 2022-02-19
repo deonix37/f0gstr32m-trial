@@ -20,6 +20,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
+    'leaflet',
+    'geo_search',
 ]
 
 MIDDLEWARE = [
@@ -110,3 +112,14 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Leaflet
+LEAFLET_CONFIG = {
+    'TILES': 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    'DEFAULT_CENTER': (55.7558, 37.6173),
+    'DEFAULT_ZOOM': 5,
+}
+
+# Dadata
+DADATA_API_KEY = '4300129db1d77c3e218e8cddcdaf645966340518'
+DADATA_API_SECRET = '16e79fc342f17dbfef97236eafe2306811165ba2'

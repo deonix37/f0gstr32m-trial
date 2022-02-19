@@ -1,0 +1,32 @@
+{% load static %}
+{% load leaflet_tags %}
+
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fogstream</title>
+  {% leaflet_js %}
+  {% leaflet_css %}
+  <link rel="stylesheet" href="{% static 'geo_search/css/index.css' %}">
+  <script src="{% static 'geo_search/js/index.js' %}" defer></script>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Поиск</h1>
+    <form id="search-form">
+      <p>
+        <label>Город: <input name="address" placeholder="г Чебоксары" required></label>
+      </p>
+      <p>
+        <label>Ближайшие города в радиусе: <input name="radius" type="number" placeholder="100"> КМ</label>
+      </p>
+      <p>
+        <button>Найти</button>
+      </p>
+    </form>
+    {% leaflet_map 'map' %}
+  </div>
+</body>
+</html>

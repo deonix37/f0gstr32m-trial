@@ -1,0 +1,13 @@
+.wrapper {
+    margin: 0 auto;
+    width: 36rem;
+}
+
+#map {
+    height: 36rem;
+    border-radius: 1rem;
+}
+
+.search-location-marker {
+    filter: hue-rotate(90deg);
+}

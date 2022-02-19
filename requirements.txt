@@ -1,2 +1,4 @@
 Django==3.2.12
+django-leaflet==0.28.2
+dadata==21.10.1
 psycopg2==2.9.3
