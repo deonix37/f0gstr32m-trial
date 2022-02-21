@@ -3,7 +3,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-faf$$)^3z3(q8hnc-pfn)nx8ohbvg79kapcrsn@@0g54%ovbw+'
+SECRET_KEY = os.environ.get('APP_KEY')
 
 DEBUG = True
 
@@ -61,7 +61,7 @@ WSGI_APPLICATION = 'fogstream_trial.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': os.environ.get('POSTGRES_NAME'),
+        'NAME': os.environ.get('POSTGRES_DB'),
         'USER': os.environ.get('POSTGRES_USER'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
         'HOST': 'db',
@@ -121,5 +121,5 @@ LEAFLET_CONFIG = {
 }
 
 # Dadata
-DADATA_API_KEY = '4300129db1d77c3e218e8cddcdaf645966340518'
-DADATA_API_SECRET = '16e79fc342f17dbfef97236eafe2306811165ba2'
+DADATA_API_KEY = os.environ.get('DADATA_API_KEY')
+DADATA_API_SECRET = os.environ.get('DADATA_API_SECRET')

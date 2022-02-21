@@ -9,19 +9,15 @@ services:
       - ./app:/app
     ports:
       - "8000:8000"
-    environment:
-      - POSTGRES_NAME=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+    env_file:
+      - .env
     depends_on:
       - db
   db:
     image: kartoza/postgis:14-3.2
     volumes:
       - pgdata:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_NAME=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+    env_file:
+      - .env
 volumes:
   pgdata:
