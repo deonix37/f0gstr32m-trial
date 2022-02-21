@@ -37,7 +37,7 @@ class AjaxCitiesView(generic.View):
             except HTTPStatusError as e:
                 return JsonResponse(e.response.json(), status=403)
 
-        if address_response['result']:
+        if address_response['geo_lon']:
             search_point = Point(
                 float(address_response['geo_lon']),
                 float(address_response['geo_lat']),
