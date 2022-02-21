@@ -17,7 +17,11 @@ services:
       - db
   db:
     image: kartoza/postgis:14-3.2
+    volumes:
+      - pgdata:/var/lib/postgresql/data
     environment:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+volumes:
+  pgdata:
